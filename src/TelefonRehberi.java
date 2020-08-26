@@ -7,7 +7,6 @@ import java.util.zip.Adler32;
 import java.io.*;
 
 public class TelefonRehberi {
-
     public static void main(String[] args){
         File f=new File("C:/Users/IREM/Desktop/TelefonRehberi/Kisiler.txt");
         BufferedWriter writer= null;
@@ -42,12 +41,9 @@ public class TelefonRehberi {
                     System.out.print("Arama yapilacak kisi ya da numarayi giriniz: ");
                     String arama = scan.next();
                     ArrayList<String> liste =new ArrayList<>();
-
                     BufferedReader reader =new BufferedReader(new InputStreamReader(new FileInputStream(f)));
                     try {
-
                         String kisi = reader.readLine();
-
                         while(kisi != null ) {
                             liste.add(kisi);
                             kisi = reader.readLine();
@@ -58,10 +54,8 @@ public class TelefonRehberi {
                                             "ad: " + dizi[0] + "\n" +
                                             "soyad: " + dizi[1] + "\n" +
                                             "numara: " + dizi[2]);
-
                                 }
                             }
-
                         }
                     } catch (IOException e) {
                         e.printStackTrace();
