@@ -8,7 +8,7 @@ import java.io.*;
 
 public class TelefonRehberi {
     public static void main(String[] args){
-        File f=new File("C:/Users/IREM/Desktop/TelefonRehberi/Kisiler.txt");
+        File f=new File("Kisiler.txt");
         BufferedWriter writer= null;
         try {
             writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f, true)));
