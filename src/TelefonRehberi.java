@@ -1,4 +1,5 @@
 import java.io.File;
+import java.nio.file.AccessDeniedException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -38,13 +39,29 @@ public class TelefonRehberi {
             }
             else if (secenek==2){
                 try {
+                    System.out.print("Arama yapilacak kisi ya da numarayi giriniz: ");
+                    String arama = scan.next();
                     ArrayList<String> liste =new ArrayList<>();
+
                     BufferedReader reader =new BufferedReader(new InputStreamReader(new FileInputStream(f)));
                     try {
-                        for (int i=0;i< liste.size();i++){
-                            String kisi =reader.readLine();      //satır satır okur.
+
+                        String kisi = reader.readLine();
+
+                        while(kisi != null ) {
                             liste.add(kisi);
-                            System.out.println("Kisiler: "+liste.get(i));
+                            kisi = reader.readLine();
+                            if (kisi!=null) {
+                                String[] dizi=kisi.split(":");
+                                if(arama.equals(dizi[0]) || arama.equals(dizi[2])) {
+                                    System.out.println("Aradiginiz kisi bulundu:\n" +
+                                            "ad: " + dizi[0] + "\n" +
+                                            "soyad: " + dizi[1] + "\n" +
+                                            "numara: " + dizi[2]);
+
+                                }
+                            }
+
                         }
                     } catch (IOException e) {
                         e.printStackTrace();
