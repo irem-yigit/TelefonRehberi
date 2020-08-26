@@ -17,12 +17,12 @@ public class TelefonRehberi {
             e.printStackTrace();
         }
         while (true){
-            int secenek;
+            String secenek;
             System.out.println("1-Yeni numara kaydet \n2-Kisi bul \n3-Cikis ");
             System.out.print("Yapmak istediginiz islemi seciniz: ");
             Scanner scan =new Scanner(System.in);
-            secenek=scan.nextInt();
-            if (secenek==1){
+            secenek=scan.next();
+            if (secenek.equals("1")){
                 System.out.print("Ad giriniz: ");
                 String ad = scan.next();
                 System.out.print("Soyad giriniz: ");
@@ -37,7 +37,7 @@ public class TelefonRehberi {
                 }
                 System.out.println("Islem basarili bir sekilde kaydedildi...\n");
             }
-            else if (secenek==2){
+            else if (secenek.equals("2")){
                 try {
                     System.out.print("Arama yapilacak kisi ya da numarayi giriniz: ");
                     String arama = scan.next();
@@ -70,7 +70,7 @@ public class TelefonRehberi {
                     e.printStackTrace();
                 }
             }
-            else if (secenek==3){
+            else if (secenek.equals("3")){
                 System.out.println("Cikis yapildi...");
                 break;
             }
